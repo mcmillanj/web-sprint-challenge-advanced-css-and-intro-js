@@ -81,7 +81,7 @@ const artists = [
   },
   {
     "id": 8,
-    "name": "Vincent van Dough",
+    "name": "Vincent van Dough",    
     "years": "1853 - 1890",
     "genre": "Post-Impressionism",
     "nationality": "Dutch",
@@ -220,7 +220,6 @@ There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is current
 artists[8].name = "Vincent Van Gogh"
 console.log(artists[8].name)
 
-
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀  
 Use getArtistByIndex to do the following:
 1. Receive an array
@@ -234,7 +233,6 @@ function getArtistByIndex(array, number)
   return `the artist at index ${number} is ${array[number].name}`
 }
 getArtistByIndex(artists, 0);
-
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -260,11 +258,9 @@ let yearOfDeath = Number(twentyCentArray[0]);
 if (birthYear >= 1904 && yearOfDeath <= 1989) {
   artistBornAndDied.push(array[i].name);
 }
-
 }
 return artistBornAndDied;
 }
-
 get20s(artists);
 
 
@@ -276,7 +272,6 @@ Use removeArtist to do the following:
 4. Return the length of the remaining dataset.
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
-
 function removeArtist(array, number) 
 {
   // array.split(number, 1);
@@ -300,7 +295,6 @@ Use addArtist to do the following:
 3. Return the resulting array
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
-
 function addArtist(array) 
 {
   const newObject = { 
@@ -314,7 +308,6 @@ function addArtist(array)
   array.push(newObject);
   return array;
 }
-
 console.log(addArtist(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
@@ -324,9 +317,22 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(array){
+let newarray =[];
+ 
+  for (let i= 0; i < array.length; i++) {
+    if(array[i]['paintings'] > 100)
+     {
+      // newarray.push(array[i].name);
+       newarray.push(array[i]['name']);
+    }
+    // console.log(newarray);
+  }
+  
+   return newarray;
 }
+console.log(lotsOfArt(artists));
+
 
 
 /* ***** END OF TASKS ***** */
